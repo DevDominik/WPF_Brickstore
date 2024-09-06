@@ -14,13 +14,13 @@
         <StackPanel Grid.Row="0" Orientation="Horizontal">
             <Label FontSize="25" Height="40" Margin="10" VerticalAlignment="Center">Keresés</Label>
             <TextBox x:Name="tbxKereso" Width="300" Height="40"></TextBox>
-            <Button x:Name="btnNev" Width="120" Height="40" Margin="10 0 0 0" FontSize="20">Név keresés</Button>
-            <Button x:Name="btnId" Width="120" Height="40" Margin="10 0 0 0" FontSize="20">ID keresés</Button>
-            <Button x:Name="btnBetolt" Width="90" Height="40" Margin="130 0 0 0" FontSize="20">Betöltés</Button>
+            <Button x:Name="btnNev" Width="120" Height="40" Margin="10 0 0 0" FontSize="20" Click="btnNev_Click">Név keresés</Button>
+            <Button x:Name="btnId" Width="120" Height="40" Margin="10 0 0 0" FontSize="20" Click="btnId_Click">ID keresés</Button>
+            <Button x:Name="btnBetolt" Width="90" Height="40" Margin="110 0 0 0" FontSize="20" Click="btnBetolt_Click">Betöltés</Button>
         </StackPanel>
         <DataGrid FontSize="20" Margin="10" x:Name="dgAdatok" Grid.Row="1" CanUserResizeRows="False" CanUserAddRows="False" CanUserResizeColumns="False" AutoGenerateColumns="False" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding ID, Mode=OneWay}"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id, Mode=OneWay}"/>
                 <DataGridTextColumn Header="Név" Binding="{Binding Nev, Mode=OneWay}"/>
                 <DataGridTextColumn Header="Kategória" Binding="{Binding Kategoria, Mode=OneWay}"/>
                 <DataGridTextColumn Header="Szín" Binding="{Binding Szin, Mode=OneWay}"/>

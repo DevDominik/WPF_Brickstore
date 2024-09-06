@@ -1,4 +1,7 @@
-﻿using System.Text;
+﻿using Microsoft.Win32;
+using System.Collections.ObjectModel;
+using System.IO;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -8,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace WPF_Brickstore
 {
@@ -16,9 +20,46 @@ namespace WPF_Brickstore
     /// </summary>
     public partial class MainWindow : Window
     {
+        static public ObservableCollection<LegoElem> legoElemek = new ObservableCollection<LegoElem>();
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnNev_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnId_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnBetolt_Click(object sender, RoutedEventArgs e)
+        {
+            dgAdatok.ItemsSource = null;
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.InitialDirectory = "c:\\";
+            ofd.Filter = "BSX fájlok (*.bsx)|*.bsx";
+            ofd.Multiselect = false;
+            if (ofd.ShowDialog() != true)
+            {
+                return;
+            }
+            XDocument xaml = XDocument.Load(ofd.FileName);
+            legoElemek.Clear();
+            foreach (XElement item in xaml.Descendants("Item"))
+            {
+                legoElemek.Add(new LegoElem(
+                    item.Element("ItemID").Value, 
+                    item.Element("ItemName").Value, 
+                    item.Element("CategoryName").Value,
+                    item.Element("ColorName").Value,
+                    Convert.ToUInt32(item.Element("Qty").Value)
+                    ));
+            }
+            dgAdatok.ItemsSource = legoElemek;
         }
     }
 }
