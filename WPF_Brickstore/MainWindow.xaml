@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="Brickstore" Height="500" Width="900" WindowStartupLocation="CenterScreen">
     <Grid>
-
+        <TextBlock>a</TextBlock>
     </Grid>
 </Window>
