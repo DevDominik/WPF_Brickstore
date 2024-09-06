@@ -28,12 +28,40 @@ namespace WPF_Brickstore
 
         private void btnNev_Click(object sender, RoutedEventArgs e)
         {
-
+            string tbxSzoveg = tbxKereso.Text.Trim();
+            if (tbxSzoveg.Length < 1)
+            {
+                dgAdatok.ItemsSource = legoElemek;
+                return;
+            }
+            ObservableCollection<LegoElem> masolat = new ObservableCollection<LegoElem>();
+            foreach (LegoElem legoElem in legoElemek)
+            {
+                if (legoElem.Nev.Substring(0, tbxSzoveg.Length).ToLower() == tbxSzoveg.ToLower())
+                {
+                    masolat.Add(legoElem);
+                }
+            }
+            dgAdatok.ItemsSource = masolat;
         }
 
         private void btnId_Click(object sender, RoutedEventArgs e)
         {
-
+            string tbxSzoveg = tbxKereso.Text.Trim();
+            if (tbxSzoveg.Length < 1)
+            {
+                dgAdatok.ItemsSource = legoElemek;
+                return;
+            }
+            ObservableCollection<LegoElem> masolat = new ObservableCollection<LegoElem>();
+            foreach (LegoElem legoElem in legoElemek)
+            {
+                if (legoElem.Id.Substring(0, tbxSzoveg.Length).ToLower() == tbxSzoveg.ToLower())
+                {
+                    masolat.Add(legoElem);
+                }
+            }
+            dgAdatok.ItemsSource = masolat;
         }
 
         private void btnBetolt_Click(object sender, RoutedEventArgs e)
