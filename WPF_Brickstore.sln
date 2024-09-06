@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_Brickstore", "WPF_Brickstore\WPF_Brickstore.csproj", "{8D5EE793-AC22-4E52-84F0-1DD731323416}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8D5EE793-AC22-4E52-84F0-1DD731323416}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D5EE793-AC22-4E52-84F0-1DD731323416}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D5EE793-AC22-4E52-84F0-1DD731323416}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D5EE793-AC22-4E52-84F0-1DD731323416}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CE244298-8AB1-4E81-B122-0DD330CCE579}
+	EndGlobalSection
+EndGlobal
